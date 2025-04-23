@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+
+  trino:
+    image: trinodb/trino:474
+    container_name: trino
+    network_mode: host
+    volumes:
+      - ./trino/etc:/etc/trino      # jvm.config, config.properties, catalog/
+      - ./trino/data:/data/trino/default
